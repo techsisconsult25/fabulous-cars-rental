@@ -4,6 +4,7 @@
 export type Car = {
   id: string;
   name: string;
+  price: number;
   image: string;
 };
 
@@ -11,21 +12,25 @@ export const CARS: Car[] = [
   {
     id: 'car-1',
     name: 'Lexus GX 460',
+    price: 200000,
     image: '/images/fleet/car-1.jpeg',
   },
   {
     id: 'car-2',
     name: 'Toyota Land Cruiser Prado - J150',
+    price: 150000,
     image: '/images/fleet/car-2.jpeg',
   },
   {
     id: 'car-3',
     name: 'Lexus GX 460',
+    price: 200000,
     image: '/images/fleet/car-1.jpeg',
   },
   {
     id: 'car-4',
     name: 'Toyota Land Cruiser Prado - J150',
+    price: 150000,
     image: '/images/fleet/car-2.jpeg',
   },
   // {

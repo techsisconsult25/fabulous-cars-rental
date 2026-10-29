@@ -34,6 +34,9 @@ export default function Fleet() {
                 <h3 className="font-display text-xl font-semibold">
                   {car.name}
                 </h3>
+                <p className="text-lg font-bold text-sodium">
+                  ₦{car.price.toLocaleString('en-NG')}
+                </p>
 
                 <div className="mt-5 flex gap-2">
                   <a
