@@ -1,26 +1,27 @@
-import { MEDIA, SITE, phoneLink, whatsappLink } from '@/lib/site';
-import { PhoneIcon, WhatsAppIcon } from './Icons';
-import { FaCar } from 'react-icons/fa6';
+import { MEDIA, SITE, emailLink, phoneLink, whatsappLink } from '@/lib/site';
+import HeroVideo from './HeroVideo';
+import { MailIcon, PhoneIcon, WhatsAppIcon } from './Icons';
 
 export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-svh items-end overflow-hidden bg-petrol bg-cover bg-center"
-      style={{ backgroundImage: `url(${MEDIA.heroPoster})` }}
+      className="relative isolate flex min-h-svh items-end overflow-hidden bg-petrol"
     >
-      <video
-        className="absolute inset-0 -z-20 h-full w-full object-cover motion-reduce:hidden"
-        src={MEDIA.heroVideo}
-        poster={MEDIA.heroPoster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
+      {/* Posters: show while the video loads, and for reduced-motion users */}
+      <div
+        className="absolute inset-0 -z-30 bg-cover bg-center md:hidden"
+        style={{ backgroundImage: `url(${MEDIA.heroPosterMobile})` }}
+      />
+      <div
+        className="absolute inset-0 -z-30 hidden bg-cover bg-center md:block"
+        style={{ backgroundImage: `url(${MEDIA.heroPosterDesktop})` }}
       />
 
+      {/* Videos: public/videos/hero-desktop.mp4 and public/videos/hero-mobile.mp4 */}
+      <HeroVideo />
+
+      {/* Keeps text readable over any footage */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
 
       <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-32 sm:px-8 sm:pb-24">
@@ -42,11 +43,11 @@ export default function Hero() {
             Book on WhatsApp
           </a>
           <a
-            href={'#fleet'}
+            href={emailLink()}
             className="inline-flex items-center justify-center gap-2 rounded-full border border-mist/40 px-6 py-3.5 font-semibold hover:bg-mist/10"
           >
-            <FaCar className="h-5 w-5" />
-            Pick a Ride
+            <MailIcon className="h-5 w-5" />
+            Send an email
           </a>
         </div>
 
