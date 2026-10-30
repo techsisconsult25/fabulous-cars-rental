@@ -1,6 +1,7 @@
-import { MEDIA, SITE, emailLink, phoneLink, whatsappLink } from '@/lib/site';
+import { MEDIA, SITE, phoneLink, whatsappLink } from '@/lib/site';
 import HeroVideo from './HeroVideo';
-import { MailIcon, PhoneIcon, WhatsAppIcon } from './Icons';
+import { PhoneIcon, WhatsAppIcon } from './Icons';
+import { FaCar } from 'react-icons/fa6';
 
 export default function Hero() {
   return (
@@ -43,11 +44,11 @@ export default function Hero() {
             Book on WhatsApp
           </a>
           <a
-            href={emailLink()}
+            href={'#fleet'}
             className="inline-flex items-center justify-center gap-2 rounded-full border border-mist/40 px-6 py-3.5 font-semibold hover:bg-mist/10"
           >
-            <MailIcon className="h-5 w-5" />
-            Send an email
+            <FaCar />
+            Pick a Ride
           </a>
         </div>
 
